@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout code
@@ -15,10 +15,7 @@ jobs:
 
       - name: Setup Minecraft Bedrock Server
         run: |
-          sudo apt-get update
-          sudo apt-get install -y openjdk-11-jre-headless
-          mkdir bedrock_server
-          cp bedrock_server.tar.gz bedrock_server/
-          cd bedrock_server
+          choco install openjdk11
           tar -xzf bedrock_server.tar.gz
-          ./bedrock_server
+          cd bedrock_server
+          .\bedrock_server.exe
