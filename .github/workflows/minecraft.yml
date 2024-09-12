@@ -1,0 +1,22 @@
+name: Minecraft Bedrock Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Minecraft Bedrock Server
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-11-jre-headless
+          tar -xzf bedrock_server_1.21.23.01.tar.gz
+          cd bedrock_server
+          ./bedrock_server
