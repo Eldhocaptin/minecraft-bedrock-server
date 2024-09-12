@@ -19,12 +19,7 @@ jobs:
       - name: List files in current directory
         run: dir
 
-      - name: Extract Minecraft Bedrock Server
+      - name: Run Minecraft Bedrock Server
         run: |
-          tar -xzf bedrock_server.tar.gz
-          dir # Verify files after extraction
-
-      - name: Setup Minecraft Bedrock Server
-        run: |
-          cd bedrock_server # Adjust this to the correct path if necessary
+          cd D:\a\minecraft-bedrock-server\minecraft-bedrock-server
           .\bedrock_server.exe
