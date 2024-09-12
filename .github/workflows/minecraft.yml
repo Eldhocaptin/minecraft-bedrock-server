@@ -13,9 +13,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install OpenJDK
+        run: choco install openjdk11
+
+      - name: List files in current directory
+        run: dir
+
+      - name: Extract Minecraft Bedrock Server
+        run: |
+          tar -xzf bedrock_server.tar.gz
+          dir # Verify files after extraction
+
       - name: Setup Minecraft Bedrock Server
         run: |
-          choco install openjdk11
-          tar -xzf bedrock_server.tar.gz
-          cd bedrock_server
+          cd bedrock_server # Adjust this to the correct path if necessary
           .\bedrock_server.exe
