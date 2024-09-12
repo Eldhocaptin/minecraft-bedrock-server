@@ -18,7 +18,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openjdk-11-jre-headless
           mkdir bedrock_server
-          cp bedrock_server_1.21.23.01.tar.gz bedrock_server/
+          cp bedrock_server.tar.gz bedrock_server/
           cd bedrock_server
-          tar -xzf bedrock_server_1.21.23.01.tar.gz
+          tar -xzf bedrock_server.tar.gz
           ./bedrock_server
